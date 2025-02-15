@@ -55,7 +55,7 @@ class PizzaSelectionActivity : AppCompatActivity() {
                 if(findViewById<RadioButton>(R.id.radioButton_Small).isChecked ||
                     findViewById<RadioButton>(R.id.radioButton_Medium).isChecked ||
                     findViewById<RadioButton>(R.id.radioButton_Large).isChecked){
-                    val order = PizzaOrder(subTotal, numToppings, size, "PLACEHOLDER TYPE")
+                    val order = PizzaOrder(subTotal, numToppings, size, "Pepperoni") // PLACEHOLDER
                     myIntent.putExtra("order", order)
                     orderActivityLauncher.launch(myIntent)
 
@@ -139,30 +139,4 @@ class PizzaSelectionActivity : AppCompatActivity() {
     fun reset(view: View){
 
     }
-
-    /*
-    fun checkout(view:View){
-        val myIntent = Intent(this, PizzaOrderActivity::class.java)
-
-        // if a type has been chosen
-        if(findViewById<RadioButton>(R.id.radioButton_Pepperoni).isChecked ||
-            findViewById<RadioButton>(R.id.radioButton_Bbq).isChecked ||
-            findViewById<RadioButton>(R.id.radioButton_Margherita).isChecked ||
-            findViewById<RadioButton>(R.id.radioButton_Hawaiian).isChecked){
-            // if a size has been chosen
-            if(findViewById<RadioButton>(R.id.radioButton_Small).isChecked ||
-                findViewById<RadioButton>(R.id.radioButton_Medium).isChecked ||
-                findViewById<RadioButton>(R.id.radioButton_Large).isChecked){
-                val order = PizzaOrder(subTotal, numToppings, size, "PLACEHOLDER TYPE")
-                myIntent.putExtra("order", order)
-                orderActivityLauncher.launch(myIntent)
-
-            }
-            else
-                Toast.makeText(this, "Please select a size for your pizza", Toast.LENGTH_SHORT).show()
-        }
-        else
-            Toast.makeText(this, "Please select a type for your pizza", Toast.LENGTH_SHORT).show()
-    }
-     */
 }

@@ -20,4 +20,12 @@
     <string name="spinach">Spinach</string>
     <string name="reset">Reset</string>
     <string name="checkout">Checkout</string>
+    <string name="summary">"Summary: "</string>
+    <string name="subTotal">"Subtotal: "</string>
+    <string name="deliveryFee">Delivery Fee:</string>
+    <string name="tax">Tax (6.35%):</string>
+    <string name="tip">Tip:</string>
+    <string name="totalPrice">Total Price:</string>
+    <string name="order">Order</string>
+    <string name="editPizza">Edit Pizza</string>
 </resources>
