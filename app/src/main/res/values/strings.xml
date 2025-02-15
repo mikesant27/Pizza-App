@@ -6,4 +6,18 @@
     <string name="bbq">BBQ Chicken</string>
     <string name="margherita">"Margherita "</string>
     <string name="hawaiian">Hawaiian</string>
+    <string name="chooseStyle">Choose Pizza Style:</string>
+    <string name="smallPrice">Small ($10.29)</string>
+    <string name="mediumPrice">Medium ($12.59)</string>
+    <string name="largePrice">Large ($14.89)</string>
+    <string name="extraToppings">Extra Toppings:</string>
+    <string name="extraPricesToppings">(Small $1.39 each, Medium $2.21 each, Large $2.29 each)</string>
+    <string name="tomatoes">Tomatoes</string>
+    <string name="mushrooms">Mushrooms</string>
+    <string name="olives">Olives</string>
+    <string name="onions">Onions</string>
+    <string name="broccoli">Broccoli</string>
+    <string name="spinach">Spinach</string>
+    <string name="reset">Reset</string>
+    <string name="checkout">Checkout</string>
 </resources>

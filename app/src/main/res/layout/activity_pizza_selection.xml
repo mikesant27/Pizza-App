@@ -32,35 +32,231 @@
         app:layout_constraintTop_toBottomOf="@+id/textView_pizzaOrder" />
 
     <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="12dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_chooseType" >
+        app:layout_constraintTop_toBottomOf="@+id/textView_chooseType">
 
         <RadioButton
             android:id="@+id/radioButton_Pepperoni"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="pizzaTypeRadioClick"
             android:text="@string/pepperoni" />
 
         <RadioButton
             android:id="@+id/radioButton_Bbq"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="pizzaTypeRadioClick"
             android:text="@string/bbq" />
 
         <RadioButton
             android:id="@+id/radioButton_Margherita"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="pizzaTypeRadioClick"
             android:text="@string/margherita" />
 
         <RadioButton
             android:id="@+id/radioButton_Hawaiian"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="pizzaTypeRadioClick"
             android:text="@string/hawaiian" />
     </RadioGroup>
+
+    <ImageView
+        android:id="@+id/imageView_Pizza"
+        android:layout_width="189dp"
+        android:layout_height="188dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/radioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/textView_chooseType"
+        app:srcCompat="@drawable/pizza_crust"
+        tools:ignore="ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/textView_ChooseStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/chooseStyle"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_ChooseStyle">
+
+        <RadioButton
+            android:id="@+id/radioButton_Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="pizzaSizeRadioClick"
+            android:text="@string/smallPrice" />
+
+        <RadioButton
+            android:id="@+id/radioButton_Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="pizzaSizeRadioClick"
+            android:text="@string/mediumPrice" />
+
+        <RadioButton
+            android:id="@+id/radioButton_Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="pizzaSizeRadioClick"
+            android:text="@string/largePrice" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView_ExtraToppings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/extraToppings"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
+
+    <TextView
+        android:id="@+id/textView_ExtraToppingsPrices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="@string/extraPricesToppings"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_ExtraToppings" />
+
+    <CheckBox
+        android:id="@+id/checkBox_Tomatoes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:onClick="pizzaToppingsCheck"
+        android:text="@string/tomatoes"
+        app:layout_constraintEnd_toStartOf="@+id/checkBox_Mushrooms"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_ExtraToppingsPrices" />
+
+    <CheckBox
+        android:id="@+id/checkBox_Mushrooms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="pizzaToppingsCheck"
+        android:text="@string/mushrooms"
+        app:layout_constraintBottom_toBottomOf="@+id/checkBox_Tomatoes"
+        app:layout_constraintEnd_toStartOf="@+id/checkBox_Olives"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/checkBox_Tomatoes"
+        app:layout_constraintTop_toTopOf="@+id/checkBox_Tomatoes"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/checkBox_Olives"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="pizzaToppingsCheck"
+        android:text="@string/olives"
+        app:layout_constraintBottom_toBottomOf="@+id/checkBox_Mushrooms"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/checkBox_Mushrooms"
+        app:layout_constraintTop_toTopOf="@+id/checkBox_Mushrooms" />
+
+    <CheckBox
+        android:id="@+id/checkBox_Onions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:onClick="pizzaToppingsCheck"
+        android:text="@string/onions"
+        app:layout_constraintEnd_toStartOf="@+id/checkBox_Broccoli"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox_Mushrooms" />
+
+    <CheckBox
+        android:id="@+id/checkBox_Broccoli"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="pizzaToppingsCheck"
+        android:text="@string/broccoli"
+        app:layout_constraintBottom_toBottomOf="@+id/checkBox_Onions"
+        app:layout_constraintEnd_toStartOf="@+id/checkBox_Spinach"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/checkBox_Onions"
+        app:layout_constraintTop_toTopOf="@+id/checkBox_Onions" />
+
+    <CheckBox
+        android:id="@+id/checkBox_Spinach"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="pizzaToppingsCheck"
+        android:text="@string/spinach"
+        app:layout_constraintBottom_toBottomOf="@+id/checkBox_Broccoli"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/checkBox_Broccoli"
+        app:layout_constraintTop_toTopOf="@+id/checkBox_Broccoli" />
+
+    <TextView
+        android:id="@+id/textView_SubTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="24dp"
+        android:text="Subtotal: $0"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox_Onions" />
+
+    <Button
+        android:id="@+id/button_Reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:onClick="reset"
+        android:text="@string/reset"
+        app:layout_constraintEnd_toStartOf="@+id/button_Checkout"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_SubTotal" />
+
+    <Button
+        android:id="@+id/button_Checkout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/checkout"
+        app:layout_constraintBottom_toBottomOf="@+id/button_Reset"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_Reset"
+        app:layout_constraintTop_toTopOf="@+id/button_Reset" />
 </androidx.constraintlayout.widget.ConstraintLayout>
