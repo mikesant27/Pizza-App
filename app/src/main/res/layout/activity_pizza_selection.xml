@@ -5,4 +5,62 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PizzaSelectionActivity"/>
+    tools:context=".PizzaSelectionActivity">
+
+    <TextView
+        android:id="@+id/textView_pizzaOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/pizzaOrder"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_chooseType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/chooseType"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_pizzaOrder" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_chooseType" >
+
+        <RadioButton
+            android:id="@+id/radioButton_Pepperoni"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/pepperoni" />
+
+        <RadioButton
+            android:id="@+id/radioButton_Bbq"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bbq" />
+
+        <RadioButton
+            android:id="@+id/radioButton_Margherita"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/margherita" />
+
+        <RadioButton
+            android:id="@+id/radioButton_Hawaiian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hawaiian" />
+    </RadioGroup>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Homework 2</string>
+    <string name="pizzaOrder">Pizza order</string>
+    <string name="chooseType">Choose Your Pizza Type:</string>
+    <string name="pepperoni">Pepperoni</string>
+    <string name="bbq">BBQ Chicken</string>
+    <string name="margherita">"Margherita "</string>
+    <string name="hawaiian">Hawaiian</string>
 </resources>
