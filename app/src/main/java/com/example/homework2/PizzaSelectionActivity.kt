@@ -57,7 +57,7 @@ class PizzaSelectionActivity : AppCompatActivity() {
                 if(findViewById<RadioButton>(R.id.radioButton_Small).isChecked ||
                     findViewById<RadioButton>(R.id.radioButton_Medium).isChecked ||
                     findViewById<RadioButton>(R.id.radioButton_Large).isChecked){
-                    val order = PizzaOrder(subTotal, numToppings, size, imageIdOfSelection) // PLACEHOLDER
+                    val order = PizzaOrder(subTotal, numToppings, size, imageIdOfSelection)
                     myIntent.putExtra("order", order)
                     orderActivityLauncher.launch(myIntent)
 
