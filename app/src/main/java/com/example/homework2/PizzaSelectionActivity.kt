@@ -95,22 +95,6 @@ class PizzaSelectionActivity : AppCompatActivity() {
     }
 
     fun pizzaToppingsCheck(view: View){
-        /*
-        numToppings = 0
-        if(findViewById<CheckBox>(R.id.checkBox_Tomatoes).isChecked)
-            numToppings++
-        if(findViewById<CheckBox>(R.id.checkBox_Olives).isChecked)
-            numToppings++
-        if(findViewById<CheckBox>(R.id.checkBox_Onions).isChecked)
-            numToppings++
-        if(findViewById<CheckBox>(R.id.checkBox_Spinach).isChecked)
-            numToppings++
-        if(findViewById<CheckBox>(R.id.checkBox_Mushrooms).isChecked)
-            numToppings++
-        if(findViewById<CheckBox>(R.id.checkBox_Broccoli).isChecked)
-            numToppings++
-        */
-
         if(view is CheckBox){
             if(view.isChecked)
                 numToppings++
