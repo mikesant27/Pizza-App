@@ -23,6 +23,8 @@ class PizzaSelectionActivity : AppCompatActivity() {
     private var subTotal: Double = 0.00
     private var size = ""
 
+    private var imageIdOfSelection = R.drawable.pizza_crust
+
     private val smallPrice = 10.29
     private val mediumPrice = 12.59
     private val largePrice = 14.89
@@ -70,7 +72,7 @@ class PizzaSelectionActivity : AppCompatActivity() {
     }
 
     fun pizzaTypeRadioClick(view: View){
-        val imageIdOfSelection = when (view.id){
+        imageIdOfSelection = when (view.id){
             R.id.radioButton_Pepperoni -> R.drawable.pepperoni
             R.id.radioButton_Bbq -> R.drawable.bbq_chicken
             R.id.radioButton_Margherita -> R.drawable.margherita
@@ -78,7 +80,7 @@ class PizzaSelectionActivity : AppCompatActivity() {
             else -> R.drawable.pizza_crust
         }
 
-        findViewById<ImageView>(R.id.imageView_Pizza).setImageResource(imageIdOfSelection)
+        updateSubtotal()
     }
 
     fun pizzaSizeRadioClick(view: View){
@@ -93,6 +95,7 @@ class PizzaSelectionActivity : AppCompatActivity() {
     }
 
     fun pizzaToppingsCheck(view: View){
+        /*
         numToppings = 0
         if(findViewById<CheckBox>(R.id.checkBox_Tomatoes).isChecked)
             numToppings++
@@ -106,7 +109,14 @@ class PizzaSelectionActivity : AppCompatActivity() {
             numToppings++
         if(findViewById<CheckBox>(R.id.checkBox_Broccoli).isChecked)
             numToppings++
+        */
 
+        if(view is CheckBox){
+            if(view.isChecked)
+                numToppings++
+            else
+                numToppings--
+        }
         updateSubtotal()
     }
 
@@ -134,6 +144,7 @@ class PizzaSelectionActivity : AppCompatActivity() {
         subTotal += (numToppings * toppingsMultiplier)
 
         findViewById<TextView>(R.id.textView_SubTotal).text = "Subtotal: $$subTotal"
+        findViewById<ImageView>(R.id.imageView_Pizza).setImageResource(imageIdOfSelection)
     }
 
     fun reset(view: View){
