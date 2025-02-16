@@ -57,7 +57,7 @@ class PizzaSelectionActivity : AppCompatActivity() {
                 if(findViewById<RadioButton>(R.id.radioButton_Small).isChecked ||
                     findViewById<RadioButton>(R.id.radioButton_Medium).isChecked ||
                     findViewById<RadioButton>(R.id.radioButton_Large).isChecked){
-                    val order = PizzaOrder(subTotal, numToppings, size, "Pepperoni") // PLACEHOLDER
+                    val order = PizzaOrder(subTotal, numToppings, size, imageIdOfSelection) // PLACEHOLDER
                     myIntent.putExtra("order", order)
                     orderActivityLauncher.launch(myIntent)
 
@@ -143,7 +143,7 @@ class PizzaSelectionActivity : AppCompatActivity() {
         }
         subTotal += (numToppings * toppingsMultiplier)
 
-        findViewById<TextView>(R.id.textView_SubTotal).text = "Subtotal: $$subTotal"
+        findViewById<TextView>(R.id.textView_SubTotal).text = "Subtotal: $${String.format("%.2f", subTotal)}"
         findViewById<ImageView>(R.id.imageView_Pizza).setImageResource(imageIdOfSelection)
     }
 

@@ -21,10 +21,19 @@ class PizzaOrderActivity : AppCompatActivity() {
         if(bundle != null){
             val order = BundleCompat.getSerializable(bundle, "order", PizzaOrder::class.java)
             if(order != null){
-                val (subTotal, numToppings, size, type) = order
+                val (subTotal, numToppings, size, imageIdOfSelection) = order
 
                 findViewById<TextView>(R.id.textView_SubTotalValue).text = "$subTotal"
 
+                val type = when (imageIdOfSelection){
+                    R.drawable.pepperoni -> "Pepperoni"
+                    R.drawable.bbq_chicken -> "BBQ Chicken"
+                    R.drawable.margherita -> "Margherita"
+                    R.drawable.hawaiian -> "Hawaiian"
+                    else -> "Crust"
+                }
+
+                /*
                 val imageIdOfSelection = when (type){
                     "Pepperoni" -> R.drawable.pepperoni
                     "BBQ" -> R.drawable.bbq_chicken
@@ -32,6 +41,7 @@ class PizzaOrderActivity : AppCompatActivity() {
                     "Hawaiian" -> R.drawable.hawaiian
                     else -> R.drawable.pizza_crust
                 }
+                 */
                 findViewById<ImageView>(R.id.imageView_Pizza2).setImageResource(imageIdOfSelection)
                 findViewById<TextView>(R.id.textView_ShowType).text = type
                 findViewById<TextView>(R.id.textView_ShowSize).text = size

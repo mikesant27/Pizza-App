@@ -6,5 +6,5 @@ data class PizzaOrder (
     val subTotal: Double,
     val numToppings: Int,
     val size: String,
-    val type: String
+    val type: Int
 ): Serializable
