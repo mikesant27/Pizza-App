@@ -132,6 +132,26 @@ class PizzaSelectionActivity : AppCompatActivity() {
     }
 
     fun reset(view: View){
-
+        // reset type
+        findViewById<RadioButton>(R.id.radioButton_Pepperoni).isChecked = false
+        findViewById<RadioButton>(R.id.radioButton_Bbq).isChecked = false
+        findViewById<RadioButton>(R.id.radioButton_Margherita).isChecked = false
+        findViewById<RadioButton>(R.id.radioButton_Hawaiian).isChecked = false
+        findViewById<ImageView>(R.id.imageView_Pizza).setImageResource(R.drawable.pizza_crust)
+        // reset size buttons
+        findViewById<RadioButton>(R.id.radioButton_Small).isChecked = false
+        findViewById<RadioButton>(R.id.radioButton_Medium).isChecked = false
+        findViewById<RadioButton>(R.id.radioButton_Large).isChecked = false
+        // reset toppings
+        findViewById<CheckBox>(R.id.checkBox_Tomatoes).isChecked = false
+        findViewById<CheckBox>(R.id.checkBox_Mushrooms).isChecked = false
+        findViewById<CheckBox>(R.id.checkBox_Olives).isChecked = false
+        findViewById<CheckBox>(R.id.checkBox_Onions).isChecked = false
+        findViewById<CheckBox>(R.id.checkBox_Broccoli).isChecked = false
+        findViewById<CheckBox>(R.id.checkBox_Spinach).isChecked = false
+        // update subtotal
+        subTotal = 0.00
+        size = ""
+        updateSubtotal()
     }
 }
