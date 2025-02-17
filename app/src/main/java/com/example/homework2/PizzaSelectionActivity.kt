@@ -3,6 +3,7 @@ package com.example.homework2
 import android.app.Activity
 import android.content.Intent
 import android.media.Image
+import android.nfc.Tag
 import android.os.Bundle
 import android.provider.MediaStore.Audio.Radio
 import android.util.Log
@@ -11,6 +12,7 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -132,24 +134,14 @@ class PizzaSelectionActivity : AppCompatActivity() {
     }
 
     fun reset(view: View){
-        // reset type
-        findViewById<RadioButton>(R.id.radioButton_Pepperoni).isChecked = false
-        findViewById<RadioButton>(R.id.radioButton_Bbq).isChecked = false
-        findViewById<RadioButton>(R.id.radioButton_Margherita).isChecked = false
-        findViewById<RadioButton>(R.id.radioButton_Hawaiian).isChecked = false
-        findViewById<ImageView>(R.id.imageView_Pizza).setImageResource(R.drawable.pizza_crust)
-        // reset size buttons
-        findViewById<RadioButton>(R.id.radioButton_Small).isChecked = false
-        findViewById<RadioButton>(R.id.radioButton_Medium).isChecked = false
-        findViewById<RadioButton>(R.id.radioButton_Large).isChecked = false
-        // reset toppings
-        findViewById<CheckBox>(R.id.checkBox_Tomatoes).isChecked = false
-        findViewById<CheckBox>(R.id.checkBox_Mushrooms).isChecked = false
-        findViewById<CheckBox>(R.id.checkBox_Olives).isChecked = false
-        findViewById<CheckBox>(R.id.checkBox_Onions).isChecked = false
-        findViewById<CheckBox>(R.id.checkBox_Broccoli).isChecked = false
-        findViewById<CheckBox>(R.id.checkBox_Spinach).isChecked = false
-        // update subtotal
+        val checkboxes = listOf(R.id.checkBox_Tomatoes, R.id.checkBox_Olives, R.id.checkBox_Onions, R.id.checkBox_Spinach, R.id.checkBox_Mushrooms, R.id.checkBox_Broccoli)
+        for(checkBoxId in checkboxes) {
+            findViewById<CheckBox>(checkBoxId).isChecked = false
+        }
+        findViewById<RadioGroup>(R.id.radioGroup).clearCheck()
+        findViewById<RadioGroup>(R.id.radioGroup2).clearCheck()
+        imageIdOfSelection = R.drawable.pizza_crust
+
         subTotal = 0.00
         size = ""
         updateSubtotal()
