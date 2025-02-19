@@ -1,6 +1,8 @@
 package com.example.homework2
 
 import android.annotation.SuppressLint
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -133,5 +135,14 @@ class PizzaOrderActivity : AppCompatActivity() {
         // calculates and total
         val total =  (subTotal * quantity) + deliveryValue + tax + tipAmount
         findViewById<TextView>(R.id.textView_TotalValue).text = "${String.format("%.2f", total)}"
+    }
+
+    fun order(view: View){
+        val myIntent = Intent()
+
+        val total = findViewById<TextView>(R.id.textView_TotalValue).text
+        myIntent.putExtra("total",total)
+        setResult(Activity.RESULT_OK, myIntent)
+        finish()
     }
 }

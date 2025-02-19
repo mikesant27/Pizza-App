@@ -41,9 +41,16 @@ class PizzaSelectionActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_pizza_selection)
 
+        findViewById<Button>(R.id.button_Reset).setOnClickListener{
+            reset()
+        }
+
         val orderActivityLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){ result ->
             if(result.resultCode == Activity.RESULT_OK){
+                reset()
                 val data = result.data
+                val total = data?.getStringExtra("total")
+                Toast.makeText(this, "Your pizza has been ordered! Total: $$total. Enjoy!", Toast.LENGTH_LONG).show()
             }
         }
 
@@ -133,7 +140,7 @@ class PizzaSelectionActivity : AppCompatActivity() {
         findViewById<ImageView>(R.id.imageView_Pizza).setImageResource(imageIdOfSelection)
     }
 
-    fun reset(view: View){
+    private fun reset(){
         val checkboxes = listOf(R.id.checkBox_Tomatoes, R.id.checkBox_Olives, R.id.checkBox_Onions, R.id.checkBox_Spinach, R.id.checkBox_Mushrooms, R.id.checkBox_Broccoli)
         for(checkBoxId in checkboxes) {
             findViewById<CheckBox>(checkBoxId).isChecked = false
