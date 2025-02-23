@@ -33,7 +33,7 @@ class PizzaSelectionActivity : AppCompatActivity() {
 
     private var numToppings = 0
     private val smallTopping = 1.39
-    private val medTopping = 2.21
+    private val mediumTopping = 2.21
     private val largeTopping = 2.29
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -124,7 +124,7 @@ class PizzaSelectionActivity : AppCompatActivity() {
             }
             "Medium" -> {
                 subTotal = mediumPrice
-                toppingsMultiplier = medTopping
+                toppingsMultiplier = mediumTopping
             }
             "Large" -> {
                 subTotal = largePrice
