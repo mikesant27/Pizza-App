@@ -8,12 +8,18 @@ CS 414-0
 On the selection screen, the user can customize their pizza, including type, size, and toppings. 
 
 #### Choosing a Pizza Type
-The user can select 4 different types of pizza:
+The user can select 4 different types of pizza using Radio Buttons:
 - Pepperoni
 - BBQ Chicken
 - Margherita
 - Hawaiian
+
+An Image View to the left of the type selection displays a picture of the selected pizza. When no pizza type is selected, a pizza crust picture is displayed
 #### Choosing a Pizza Size
+The user can select their desired pizza size using Radio Buttons. Each size has its own price
+- Small ($10.29)
+- Medium ($12.59)
+- Large ($14.89)
 
 #### Choosing extra toppings
 
