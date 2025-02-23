@@ -59,3 +59,24 @@ When the user presses the check out button, we first check if a type and size ha
 To assit with the passing of information to the Order Activity, as ***PizzaOrder*** data class was created. the ***PizzaOrder*** class stores 4 variables, *subTotal*, *numToppings*, *size*, and *type*. When the user presses the check out button, an instance of the ***PizzaOrder* class is passed to the Intent using the ***putExtra()*** function, passing the *subTotal*, *numToppings*, *size*, and *imageIdOfSelection*
 
 ### Ordering a Pizza
+After the App has switched to the Order Activity, we need to pull the values from the Intent. We do that using ***BundleCompat.getSerializable()***. Since the *type* value from the order is just the id of the image, we can directly set the image view to that, and use a when case to determine the value of a variable named *type*. We can also use these values to display the pizza summary at the top of the screen.
+
+There are some global variables in this Activity that are important in calculating the total of the transation.
+- *quantity*: Number of pizzas the user is buying; set to 1 by default
+- *delivery*: Whether the user wants deliver; set to false by default
+- *deliverFee*: The price for deliver; set to 2.00 by default
+- *subTotal*: the subTotal of the transaction before delivery, tip, and tax
+- *taxRate*: The tax rate in decimat; set to 0.0635 by default for 6.35% tax
+- *tip*: The percentage tip the user decides; set to 0 by default
+
+### Determining the tip
+The *tip* percentage is determined by a seek bar, where whenever the progress of the seek bar is changed, the *tip* is set to *progress* so that it can be used later.
+
+### Determining delivery
+To determine whether or not there is a delivery fee, an if statement is used. If *view.checked* is true, then we set *delivery* to true. Otherwise, we set *delivery* to false
+
+### Increasing and Decreasing the Quantity
+To update the quanity, we have 2 Buttons, plus and minus, and a Text View label. When the user presses plus, *quanitity* goes up, and when the user presses minus, *quantity* goes down. The value of *quantity* cannot be less than 1, so pressing the minus button when *quantity* = 1 does nothing. 
+
+### Updating the Order Summary
+Whenever the *quantity*, *delivery*, or *tip* is changed, we need to update the Order Summary. The order summary is displayed as 3 "columns" using Linear Layouts. The first column consists of labels to show the user which value is which. The second column displays the actual values of the subtotal, delivery, tip, tax, and total price.
