@@ -22,7 +22,17 @@ The user can select their desired pizza size using Radio Buttons. Each size has 
 - Large ($14.89)
 
 #### Choosing extra toppings
-
+The user can select and additional toppings using Check Boxes:
+- Tomatoes
+- Mushrooms
+- Olives
+- Onions
+- Broccoli
+- Spinach
+The price per topping is determined on the size of the pizza:
+- Small ($1.39/ea)
+- Medium ($2.21/ea)
+- Large ($2.29/ea)
 #### Resetting the selection
 
 #### Checking out
