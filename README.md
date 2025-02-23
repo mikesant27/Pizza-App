@@ -88,8 +88,13 @@ The *subtTotal* is calculated by doing *subTotal* * *quantiy*.
 We determine if a delivery fee needs to be applied by delaring a value called *deliveryValue*. If *delivery* is true, we set *deliveryValue* to *deliveryFee*. I did this so that the calculation for *total* can be one equation ,and doesnt have to be 2 different equations based on if there is a delivery or not. 
 
 *tax* is calculated by doing the following equation:
-- ((*subtotal* * *quantity*) + *deliveryValue*) * *taxRate*
+- ((*subTotal* * *quantity*) + *deliveryValue*) * *taxRate*
 This takes the current subTotal including delivery and quantity of pizzas, and multiplies it by the *taxRate*, this is stored in *tax* so that it can be added to get the *total* later.
 
 *tipAmount* is calculated by doing the following equation:
-- ((*subtotal* * *quantity*) + *deliveryValue* + *tax* ) * (*tip* / 100)
+- ((*subTotal* * *quantity*) + *deliveryValue* + *tax* ) * (*tip* / 100)
+*tip* needs to be divided by 100 because *tip* is in percentage form, not decimal form.
+
+Final, *total* is calculated by adding together all the previous values:
+- (*subTotal* * *quantity*) + *deliveryValue* + *tax* + *tipAmount*
+
