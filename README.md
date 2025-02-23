@@ -98,3 +98,8 @@ This takes the current subTotal including delivery and quantity of pizzas, and m
 Final, *total* is calculated by adding together all the previous values:
 - (*subTotal* * *quantity*) + *deliveryValue* + *tax* + *tipAmount*
 
+### Editing the Pizza
+If the user wants to edit the pizza, the user can press the Edit Pizza Button. This will simple call the ***finish()*** function, and take you back to the Selection Activity.
+
+### The Order Button
+When the user presses the order button, we use Intent and pass the total back to the Selection Activity and finish the Order Activity. When the Selection Activity starts again, we reset the selection, then use Toast to confirm the order has been placed, adding in the total so the user can see it. 
