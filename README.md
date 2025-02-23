@@ -54,6 +54,8 @@ To get the Subtotal, we then have to add *numToppings* * *toppingsMultiplier* to
 Lastly, the image of the Image View is updated using the ***setImageResource()*** function, passing the variable *imageIdOfSelection* that is changed when the user selects a type.
 
 #### Checking out
+When the user presses the check out button, we first check if a type and size have been chozen, if one or both have not be chozen, a Toast message will appear to tell the user to select a type of size, depending on which one they did not select. 
 
+To assit with the passing of information to the Order Activity, as ***PizzaOrder*** data class was created. the ***PizzaOrder*** class stores 4 variables, *subTotal*, *numToppings*, *size*, and *type*. When the user presses the check out button, an instance of the ***PizzaOrder* class is passed to the Intent using the ***putExtra()*** function, passing the *subTotal*, *numToppings*, *size*, and *imageIdOfSelection*
 
 ### Ordering a Pizza
