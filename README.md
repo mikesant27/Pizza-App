@@ -15,6 +15,7 @@ The user can select 4 different types of pizza using Radio Buttons:
 - Hawaiian
 
 An Image View to the left of the type selection displays a picture of the selected pizza. When no pizza type is selected, a pizza crust picture is displayed
+
 #### Choosing a Pizza Size
 The user can select their desired pizza size using Radio Buttons. Each size has its own price
 - Small ($10.29)
@@ -33,8 +34,9 @@ The price per topping is determined on the size of the pizza:
 - Small ($1.39/ea)
 - Medium ($2.21/ea)
 - Large ($2.29/ea)
-#### Resetting the selection
 
+#### Resetting the selection
+The rest button resets the current pizza selection. It does this by first looping through an array of the checkboxes, and sets their isChecked value to false. Next it runs the ***clearCheck()*** function for both radio groups for type and size. Then it changes the Image View back to the pizza crust. Lastly, it resets the *subtotal* back to 0 and *size* back to "".
 #### Checking out
 
 
