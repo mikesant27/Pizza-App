@@ -1,6 +1,6 @@
 # Homework 2: Pizza Ordering App
 Michael Santoro
-CS 414-0
+CS 414-02
 
 ## Description: 
 
@@ -39,8 +39,14 @@ The price per topping is determined on the size of the pizza:
 
 The prices for each size of topping are stored in global variables *smallTopping*, *mediumTopping*, and *largeTopping*. Additionally, the number of toppings is stoped in a global variable named *numToppings*
 
-#### Resetting the selection
-The rest button resets the current pizza selection. It does this by first looping through an array of the checkboxes, and sets their isChecked value to false. Next it runs the ***clearCheck()*** function for both radio groups for type and size. Then it changes the Image View back to the pizza crust. Lastly, it resets the *subtotal* back to 0 and *size* back to "".
+#### Resetting the Selection
+The rest button resets the current pizza selection. It does this by first looping through an array of the checkboxes, and sets their isChecked value to false. Next it runs the ***clearCheck()*** function for both radio groups for type and size. Then it changes the Image View back to the pizza crust. Lastly, it resets the *subtotal* back to 0, *size* back to "", and runs the ***updateSubtotal()*** function to display these changes to the user.
+
+#### Updating the Subtotal 
+Whenever the user makes a change to their selection, whether it by the pizza type, size, or toppings, we need to reflect the new subtotal to the user. This is handled by the ***updateSubtotal()*** function. 
+
+First I declared a variabled called *toppingsMultiplier*, which is used to determine which toppings price we are using. Using a when statement using the *size* variable as the condition, I set the *subTotal* variable to the price of the size the user selected as the base price without toppings, then set *toppingsMultiplier* to the price of the toppings for that price. Ex. if *size* = "Small", *subTotal* = *smallPrice* and *toppingsMultiplier* = *smallTopping*
+
 #### Checking out
 
 
