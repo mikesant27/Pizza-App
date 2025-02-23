@@ -22,6 +22,8 @@ The user can select their desired pizza size using Radio Buttons. Each size has 
 - Medium ($12.59)
 - Large ($14.89)
 
+The prices for each size of pizza are stored in global variables *smallPrice*, *mediumPrice* and *largePrice*
+
 #### Choosing extra toppings
 The user can select and additional toppings using Check Boxes:
 - Tomatoes
