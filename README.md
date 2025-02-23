@@ -37,7 +37,7 @@ The price per topping is determined on the size of the pizza:
 - Medium ($2.21/ea)
 - Large ($2.29/ea)
 
-The prices for each size of topping are stored in gloval variables *smallTopping*, *mediumTopping*, and largeTopping*
+The prices for each size of topping are stored in global variables *smallTopping*, *mediumTopping*, and *largeTopping*. Additionally, the number of toppings is stoped in a global variable named *numToppings*
 
 #### Resetting the selection
 The rest button resets the current pizza selection. It does this by first looping through an array of the checkboxes, and sets their isChecked value to false. Next it runs the ***clearCheck()*** function for both radio groups for type and size. Then it changes the Image View back to the pizza crust. Lastly, it resets the *subtotal* back to 0 and *size* back to "".
