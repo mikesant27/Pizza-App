@@ -81,4 +81,11 @@ To update the quanity, we have 2 Buttons, plus and minus, and a Text View label.
 ### Updating the Order Summary
 Whenever the *quantity*, *delivery*, or *tip* is changed, we need to update the Order Summary. The order summary is displayed as 3 "columns" using Linear Layouts. The first column consists of labels to show the user which value is which. The second column displays the actual values of the subtotal, delivery, tip, tax, and total price. The last column has a switch for the delivery, label to show the tip percentage, and the seek bar to edit the tip amount. In retrospect, I think that a table layout would have been easier to implement, as I had to use an invisible text view and contraints to make everything line up.
 
-When ***updateSummary()*** is called, these values are updated. The *subtTotal* is calculated by doing *subTotal* * *quantiy*. We determine if a delivery fee needs to be applied by delaring a value called *deliveryValue*. If *delivery* is true, we set *deliveryValue* to *deliveryFee*. I did this so that the calculation for *total* can be one equation ,and doesnt have to be 2 different equations based on if there is a delivery or not. 
+When ***updateSummary()*** is called, these values are updated. 
+
+The *subtTotal* is calculated by doing *subTotal* * *quantiy*. 
+
+We determine if a delivery fee needs to be applied by delaring a value called *deliveryValue*. If *delivery* is true, we set *deliveryValue* to *deliveryFee*. I did this so that the calculation for *total* can be one equation ,and doesnt have to be 2 different equations based on if there is a delivery or not. 
+
+*tax* is calculated by doing the following equation:
+- ((*subtotal* * *quantity*) + *deliveryValue*) * *taxRate*
