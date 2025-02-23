@@ -14,7 +14,7 @@ The user can select 4 different types of pizza using Radio Buttons:
 - Margherita
 - Hawaiian
 
-An Image View to the left of the type selection displays a picture of the selected pizza. When no pizza type is selected, a pizza crust picture is displayed. The type of pizza is not stored explicitly, but is implied through the use of a variable named *imageIdOfSelection*. By default it is set to *R.drawable.pizza_crust* which is the blank pizza, but when the user selects a type, this variable is changed to *R.drawble.<Selection>*
+An Image View to the left of the type selection displays a picture of the selected pizza. When no pizza type is selected, a pizza crust picture is displayed. The type of pizza is not stored explicitly, but is implied through the use of a variable named *imageIdOfSelection*. By default it is set to *R.drawable.pizza_crust* which is the blank pizza, but when the user selects a type, this variable is changed to *R.drawble.Selection*
 
 #### Choosing a Pizza Size
 The user can select their desired pizza size using Radio Buttons. Each size has its own price
