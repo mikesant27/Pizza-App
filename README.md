@@ -51,6 +51,8 @@ Ex. if *size* = "Small", *subTotal* = *smallPrice* and *toppingsMultiplier* = *s
 
 To get the Subtotal, we then have to add *numToppings* * *toppingsMultiplier* to the current subtotal. 
 
+Lastly, the image of the Image View is updated using the ***setImageResource()*** function, passing the variable *imageIdOfSelection* that is changed when the user selects a type.
+
 #### Checking out
 
 
