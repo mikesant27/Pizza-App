@@ -33,8 +33,8 @@ class PizzaSelectionActivity : AppCompatActivity() {
 
     private var numToppings = 0
     private val smallTopping = 1.39
-    private val mediumTopping = 2.21
-    private val largeTopping = 2.29
+    private val mediumTopping = 2.29
+    private val largeTopping = 2.99
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
