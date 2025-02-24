@@ -3,6 +3,7 @@ Michael Santoro
 CS 414-02
 
 ## Description: 
+This is a pizza ordering app where you are able to select your type of pizza, size, and extra toppings. The user can also determine if they want their pizza delivered or if they want to leave a tip.
 
 ### Selecting a Pizza
 On the selection screen, the user can customize their pizza, including type, size, and toppings. 
