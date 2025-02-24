@@ -93,7 +93,7 @@ We determine if a delivery fee needs to be applied by delaring a value called *d
 This takes the current subTotal including delivery and quantity of pizzas, and multiplies it by the *taxRate*, this is stored in *tax* so that it can be added to get the *total* later.
 
 *tipAmount* is calculated by doing the following equation:
-- ((*subTotal* * *quantity*) + *deliveryValue* + *tax* ) * (*tip* / 100)
+- ((*subTotal* * *quantity*) + *deliveryValue*) * (*tip* / 100)
 *tip* needs to be divided by 100 because *tip* is in percentage form, not decimal form.
 
 Final, *total* is calculated by adding together all the previous values:
