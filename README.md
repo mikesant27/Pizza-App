@@ -3,6 +3,7 @@ Michael Santoro
 CS 414-02
 
 ## Description: 
+This is a pizza ordering app where you are able to select your type of pizza, size, and extra toppings. The user can also determine if they want their pizza delivered or if they want to leave a tip.
 
 ### Selecting a Pizza
 On the selection screen, the user can customize their pizza, including type, size, and toppings. 
@@ -54,6 +55,57 @@ To get the Subtotal, we then have to add *numToppings* * *toppingsMultiplier* to
 Lastly, the image of the Image View is updated using the ***setImageResource()*** function, passing the variable *imageIdOfSelection* that is changed when the user selects a type.
 
 #### Checking out
+When the user presses the check out button, we first check if a type and size have been chozen, if one or both have not be chozen, a Toast message will appear to tell the user to select a type of size, depending on which one they did not select. 
 
+To assit with the passing of information to the Order Activity, as ***PizzaOrder*** data class was created. the ***PizzaOrder*** class stores 4 variables, *subTotal*, *numToppings*, *size*, and *type*. When the user presses the check out button, an instance of the ***PizzaOrder* class is passed to the Intent using the ***putExtra()*** function, passing the *subTotal*, *numToppings*, *size*, and *imageIdOfSelection*
 
 ### Ordering a Pizza
+After the App has switched to the Order Activity, we need to pull the values from the Intent. We do that using ***BundleCompat.getSerializable()***. Since the *type* value from the order is just the id of the image, we can directly set the image view to that, and use a when case to determine the value of a variable named *type*. We can also use these values to display the pizza summary at the top of the screen.
+
+There are some global variables in this Activity that are important in calculating the total of the transation.
+- *quantity*: Number of pizzas the user is buying; set to 1 by default
+- *delivery*: Whether the user wants deliver; set to false by default
+- *deliverFee*: The price for deliver; set to 2.00 by default
+- *subTotal*: the subTotal of the transaction before delivery, tip, and tax
+- *taxRate*: The tax rate in decimat; set to 0.0635 by default for 6.35% tax
+- *tip*: The percentage tip the user decides; set to 0 by default
+
+### Determining the tip
+The *tip* percentage is determined by a seek bar, where whenever the progress of the seek bar is changed, the *tip* is set to *progress* so that it can be used later.
+
+### Determining delivery
+To determine whether or not there is a delivery fee, an if statement is used. If *view.checked* is true, then we set *delivery* to true. Otherwise, we set *delivery* to false
+
+### Increasing and Decreasing the Quantity
+To update the quanity, we have 2 Buttons, plus and minus, and a Text View label. When the user presses plus, *quanitity* goes up, and when the user presses minus, *quantity* goes down. The value of *quantity* cannot be less than 1, so pressing the minus button when *quantity* = 1 does nothing. 
+
+### Updating the Order Summary
+Whenever the *quantity*, *delivery*, or *tip* is changed, we need to update the Order Summary. The order summary is displayed as 3 "columns" using Linear Layouts. The first column consists of labels to show the user which value is which. The second column displays the actual values of the subtotal, delivery, tip, tax, and total price. The last column has a switch for the delivery, label to show the tip percentage, and the seek bar to edit the tip amount. In retrospect, I think that a table layout would have been easier to implement, as I had to use an invisible text view and contraints to make everything line up.
+
+When ***updateSummary()*** is called, these values are updated. 
+
+The *subtTotal* is calculated by doing *subTotal* * *quantiy*. 
+
+We determine if a delivery fee needs to be applied by delaring a value called *deliveryValue*. If *delivery* is true, we set *deliveryValue* to *deliveryFee*. I did this so that the calculation for *total* can be one equation ,and doesnt have to be 2 different equations based on if there is a delivery or not. 
+
+*tax* is calculated by doing the following equation:
+- ((*subTotal* * *quantity*) + *deliveryValue*) * *taxRate*
+This takes the current subTotal including delivery and quantity of pizzas, and multiplies it by the *taxRate*, this is stored in *tax* so that it can be added to get the *total* later.
+
+*tipAmount* is calculated by doing the following equation:
+- ((*subTotal* * *quantity*) + *deliveryValue*) * (*tip* / 100)
+*tip* needs to be divided by 100 because *tip* is in percentage form, not decimal form.
+
+Final, *total* is calculated by adding together all the previous values:
+- (*subTotal* * *quantity*) + *deliveryValue* + *tax* + *tipAmount*
+
+### Editing the Pizza
+If the user wants to edit the pizza, the user can press the Edit Pizza Button. This will simple call the ***finish()*** function, and take you back to the Selection Activity.
+
+### The Order Button
+When the user presses the order button, we use Intent and pass the total back to the Selection Activity and finish the Order Activity. When the Selection Activity starts again, we reset the selection, then use Toast to confirm the order has been placed, adding in the total so the user can see it. 
+
+## References
+- Widgets Demo
+- Favorite Animal
+- Intent Examples
