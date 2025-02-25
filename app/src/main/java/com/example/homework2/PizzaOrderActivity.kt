@@ -129,7 +129,7 @@ class PizzaOrderActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.textView_TaxValue).text = "${String.format("%.2f", tax)}"
 
         // calculates and displays tip
-        val tipAmount = ((subTotal * quantity)) * (tip / 100.00)
+        val tipAmount = (subTotal * quantity) * (tip / 100.00)
         findViewById<TextView>(R.id.textView_TipValue).text = "${String.format("%.2f", tipAmount)}"
 
         // calculates and total
