@@ -150,6 +150,7 @@ class PizzaSelectionActivity : AppCompatActivity() {
         imageIdOfSelection = R.drawable.pizza_crust
 
         subTotal = 0.00
+        numToppings = 0
         size = ""
         updateSubtotal()
     }
