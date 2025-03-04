@@ -35,8 +35,8 @@ The user can select and additional toppings using Check Boxes:
 - Spinach
 The price per topping is determined on the size of the pizza:
 - Small ($1.39/ea)
-- Medium ($2.21/ea)
-- Large ($2.29/ea)
+- Medium ($2.29/ea)
+- Large ($2.99/ea)
 
 The prices for each size of topping are stored in global variables *smallTopping*, *mediumTopping*, and *largeTopping*. Additionally, the number of toppings is stoped in a global variable named *numToppings*
 
